@@ -9,6 +9,7 @@ import { BooksComponent } from './books/books.component';
 import { FooterComponent } from './footer/footer.component';
 import { ViewBooksComponent } from './view-books/view-books.component';
 import { PublishBookComponent } from './publish-book/publish-book.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { PublishBookComponent } from './publish-book/publish-book.component';
     BooksComponent,
     FooterComponent,
     ViewBooksComponent,
-    PublishBookComponent
+    PublishBookComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,20 @@
+.aboutContainer{
+    width: 100%;
+    min-height: 100vh;
+    background-image: url("../../assets/bg4.avif");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.blurAboutContainer{
+    backdrop-filter: blur(35px);
+    width: 100%;
+    min-height: 100vh;
+}
+
+.aboutPara{
+    font-weight: 500;
+    font-size: 24px;
+    font-family: emoji;
+}
