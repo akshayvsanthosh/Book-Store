@@ -1,0 +1,28 @@
+.publishContainer{
+    width: 100%;
+    min-height: 100vh;
+    background-image: url("../../assets/bg4.avif");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.blurPublishContainer{
+    backdrop-filter: blur(25px);
+    width: 100%;
+    min-height: 100vh;
+}
+
+.inputDivs{
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+}
+
+.inputLabel{
+    width: 100%;
+    text-align: start;
+    font-weight: 700;
+    font-size: 20px;
+}

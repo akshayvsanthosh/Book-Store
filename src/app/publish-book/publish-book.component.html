@@ -1,0 +1,38 @@
+<div class="publishContainer">
+    <div class="blurPublishContainer pb-5">
+        <div class="container text-center">
+            <h3 class="pt-5 mb-4 fw-bold fs-2">ENTER BOOK DETAILS</h3>
+            <div class="row">
+                <div class="col d-flex justify-content-center mt-4">
+                    <form style="width: 60%;">
+                        <div class="mb-4 inputDivs">
+                            <label class="inputLabel">
+                                <input name="bookImage" formControlName="bookImage" type="file" style="display: none;">
+                                <img width="36%" height="275px" [src]="image" alt="Image">
+                            </label>
+                        </div>
+                        <div class="mb-3 inputDivs">
+                            <label for="exampleInputBookName" class="form-label inputLabel">Book Name*</label>
+                            <input type="text" class="form-control " id="exampleInputBookName">
+                        </div>
+                        <div class="mb-3 inputDivs">
+                            <label for="category" class="inputLabel">Category*</label>
+                            <select class="form-select" aria-label="Default select example" id="category">
+                                <option selected disabled>Select category of book</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </div>
+                        <div class="mb-4 inputDivs">
+                            <label class="inputLabel">Upload book*</label>
+                            <input name="bookFile" formControlName="bookFile" type="file">
+                        </div>
+                        <button class="btn btn-warning me-5 mt-5">Cancel</button>
+                        <button type="submit" class="btn btn-primary mt-5">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
