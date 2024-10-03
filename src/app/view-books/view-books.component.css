@@ -1,0 +1,14 @@
+.booksContainer{
+    width: 100%;
+    min-height: 100vh;
+    background-image: url("../../assets/bg4.avif");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.blurBooksContainer{
+    backdrop-filter: blur(15px);
+    width: 100%;
+    min-height: 100vh;
+}
