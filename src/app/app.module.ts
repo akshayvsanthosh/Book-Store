@@ -10,6 +10,8 @@ import { FooterComponent } from './footer/footer.component';
 import { ViewBooksComponent } from './view-books/view-books.component';
 import { PublishBookComponent } from './publish-book/publish-book.component';
 import { AboutComponent } from './about/about.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { AboutComponent } from './about/about.component';
     FooterComponent,
     ViewBooksComponent,
     PublishBookComponent,
-    AboutComponent
+    AboutComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

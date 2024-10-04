@@ -4,12 +4,16 @@ import { HomeComponent } from './home/home.component';
 import { ViewBooksComponent } from './view-books/view-books.component';
 import { PublishBookComponent } from './publish-book/publish-book.component';
 import { AboutComponent } from './about/about.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
-  {path:"home",component:HomeComponent},
+  {path:"",component:HomeComponent},
   {path:"books",component:ViewBooksComponent},
   {path:"publish",component:PublishBookComponent},
-  {path:"about",component:AboutComponent}
+  {path:"about",component:AboutComponent},
+  {path:"login",component:LoginComponent},
+  {path:"register",component:RegisterComponent}
 ];
 
 @NgModule({
