@@ -13,4 +13,8 @@ export class ApiService {
   registerAPI(user:any){
     return this.http.post(`${this.server_url}/register`,user)
   }
+
+  loginAPI(user:any){
+    return this.http.post(`${this.server_url}/login`,user)
+  }
 }
