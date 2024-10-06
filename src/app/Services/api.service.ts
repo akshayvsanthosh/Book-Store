@@ -34,4 +34,8 @@ export class ApiService {
   getHomeBooksAPI(){
     return this.http.get(`${this.server_url}/homeBooks`)
   }
+
+  addBookAPI(reqBody:any){
+    return this.http.post(`${this.server_url}/addBook`,reqBody,this.appendToken())
+  }
 }

@@ -4,20 +4,25 @@
             <h3 class="pt-5 mb-4 fw-bold fs-2">ENTER BOOK DETAILS</h3>
             <div class="row">
                 <div class="col d-flex justify-content-center mt-4">
-                    <form style="width: 60%;">
+                    <form (ngSubmit)="addBook()"  [formGroup]="addForm" style="width: 60%;">
+                        <!-- image -->
                         <div class="mb-4 inputDivs">
                             <label class="inputLabel">
-                                <input name="bookImage" type="file" style="display: none;">
+                                <input (change)="onImgChange($event)" formControlName="bookImg" name="bookImage" type="file" style="display: none;">
                                 <img width="36%" height="275px" [src]="image" alt="Image">
                             </label>
                         </div>
+                        <div *ngIf="addForm.get('bookImg')?.errors && addForm.get('bookImg')?.touched" class="fw-bolder text-danger mb-3">*Invalid Image</div>
+                        <!-- book name -->
                         <div class="mb-3 inputDivs">
                             <label for="exampleInputBookName" class="form-label inputLabel">Book Name*</label>
-                            <input type="text" class="form-control " id="exampleInputBookName">
+                            <input formControlName="bookName" name="bookName" type="text" class="form-control " id="exampleInputBookName">
                         </div>
+                        <div *ngIf="addForm.get('bookName')?.errors && addForm.get('bookName')?.touched" class="fw-bolder text-danger mb-3">*Invalid Name</div>
+                        <!-- category -->
                         <div class="mb-3 inputDivs">
                             <label for="category" class="inputLabel">Category*</label>
-                            <select class="form-select" aria-label="Default select example" id="category">
+                            <select formControlName="bookCategory" name="bookCategory" class="form-select" aria-label="Default select example" id="category">
                                 <option selected disabled>Select category of book</option>
                                 <option value="1">Fiction</option>
                                 <option value="2">Non-Fiction</option>
@@ -27,10 +32,14 @@
                                 <option value="6">Short Stories</option>
                             </select>
                         </div>
+                        <div *ngIf="addForm.get('bookCategory')?.errors && addForm.get('bookCategory')?.touched" class="fw-bolder text-danger mb-3">*Invalid Category</div>
+                        <!-- file -->
                         <div class="mb-4 inputDivs">
                             <label class="inputLabel">Upload book*</label>
-                            <input name="bookFile" formControlName="bookFile" type="file">
+                            <input (change)="onFileChange($event)" name="bookFile" formControlName="bookFile" type="file">
                         </div>
+                        <div *ngIf="addForm.get('bookFile')?.errors && addForm.get('bookFile')?.touched" class="fw-bolder text-danger mb-3">*Invalid File</div>
+                        <!-- buttons -->
                         <button class="btn btn-warning me-5 mt-5">Cancel</button>
                         <button type="submit" class="btn btn-primary mt-5">Submit</button>
                     </form>
