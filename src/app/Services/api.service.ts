@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -16,5 +16,22 @@ export class ApiService {
 
   loginAPI(user:any){
     return this.http.post(`${this.server_url}/login`,user)
+  }
+
+  appendToken(){
+    const token = sessionStorage.getItem("token")
+    let headers=new HttpHeaders()
+    if (token) {
+      headers=headers.append('Authorization',`Bearer ${token}`)
+    }
+      return {headers}
+  }
+
+  getAllBooksAPI(){
+    return this.http.get(`${this.server_url}/allBooks`,this.appendToken())
+  }
+
+  getHomeBooksAPI(){
+    return this.http.get(`${this.server_url}/homeBooks`)
   }
 }

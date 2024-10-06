@@ -18,23 +18,8 @@
                 <!-- books -->
                 <div class="col-12">
                     <div class="row mt-5">
-                        <div class="col-12 col-md-6 col-lg-4 pt-3 pb-3 d-flex align-items-center justify-content-center">
-                            <app-books></app-books>
-                        </div>
-                        <div class="col-12 col-md-6 col-lg-4 pt-3 pb-3 d-flex align-items-center justify-content-center">
-                            <app-books></app-books>
-                        </div>
-                        <div class="col-12 col-md-6 col-lg-4 pt-3 pb-3 d-flex align-items-center justify-content-center">
-                            <app-books></app-books>
-                        </div>
-                        <div class="col-12 col-md-6 col-lg-4 pt-3 pb-3 d-flex align-items-center justify-content-center">
-                            <app-books></app-books>
-                        </div>
-                        <div class="col-12 col-md-6 col-lg-4 pt-3 pb-3 d-flex align-items-center justify-content-center">
-                            <app-books></app-books>
-                        </div>
-                        <div class="col-12 col-md-6 col-lg-4 pt-3 pb-3 d-flex align-items-center justify-content-center">
-                            <app-books></app-books>
+                        <div *ngFor="let book of allBooks" class="col-12 col-md-6 col-lg-4 pt-3 pb-3 d-flex align-items-center justify-content-center">
+                            <app-books [book]="book"></app-books>
                         </div>
                     </div>
                 </div>

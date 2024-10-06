@@ -39,22 +39,13 @@
 <div class='booksDiv'>
     <div class="booksBlurDiv pt-4">
         <h1 class='mb-5 text-white fw-bold'>EXPLORE OUR BOOKS</h1>
-        <marquee>
-            <div class='d-flex'>
-                <div class='me-5'>
-                    <app-books></app-books>
-                </div>
-                <div class='me-5'>
-                    <app-books></app-books>
-                </div>
-                <div class='me-5'>
-                    <app-books></app-books>
-                </div>
-                <div class='me-5'>
-                    <app-books></app-books>
+        <div class="marquee-container">
+            <div class="marquee-content">
+                <div *ngFor="let book of allBooks | slice:0:3" class='me-5'>
+                    <app-books [book]="book"></app-books>
                 </div>
             </div>
-        </marquee>
+        </div>
         <button routerLink="/books" class='btn btn-link mt-3'>CLICK HERE TO VIEW MORE BOOKS...</button>
     </div>
 </div>

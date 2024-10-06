@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { ApiService } from '../Services/api.service';
 
 @Component({
   selector: 'app-books',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class BooksComponent {
 
+  @Input() book:any;
+  SERVER_URL:any="";
+
+  constructor(private api: ApiService) { 
+    this.SERVER_URL = api.server_url
+  }
 }
