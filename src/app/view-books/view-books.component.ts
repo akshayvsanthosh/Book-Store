@@ -28,4 +28,8 @@ export class ViewBooksComponent implements OnInit{
     })
   }
 
+  sortByCat(){
+    this.allBooks.sort((book1:any,book2:any)=>book1.bookCategory-book2.bookCategory)
+  }
+
 }

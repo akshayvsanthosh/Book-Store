@@ -12,8 +12,7 @@
                         Sort
                     </button>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item">Sort By ID</a></li>
-                        <li><a class="dropdown-item">Sort By Name</a></li>
+                        <li><a (click)="sortByCat()" class="dropdown-item">Sort By category</a></li>
                     </ul>
                 </div>
                 <!-- books -->
@@ -22,6 +21,9 @@
                         <div *ngFor="let book of allBooks | search:searchKey" class="col-12 col-md-6 col-lg-4 pt-3 pb-3 d-flex align-items-center justify-content-center">
                             <app-books [book]="book"></app-books>
                         </div>
+                        <div *ngIf="(allBooks | search:searchKey).length==0" class="text-danger">
+                            Book not found!!
+                    </div>
                     </div>
                 </div>
             </div>

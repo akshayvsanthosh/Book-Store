@@ -7,6 +7,7 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class ApiService {
   searchKey=new BehaviorSubject("")
+  myBook=new BehaviorSubject(null)
 
   server_url="http://localhost:3000"
 
@@ -39,5 +40,23 @@ export class ApiService {
 
   addBookAPI(reqBody:any){
     return this.http.post(`${this.server_url}/addBook`,reqBody,this.appendToken())
+  }
+
+  getMyBookAPI(){
+    return this.http.get(`${this.server_url}/userBooks`,this.appendToken())
+  }
+
+  getMyBook(){
+    this.getMyBookAPI().subscribe((result:any)=>{
+      this.myBook.next(result)
+    })
+  }
+
+  deleteBookAPI(id:any){
+    return this.http.delete(`${this.server_url}/book/${id}/delete`,this.appendToken())
+  }
+
+  isLoggedIn(){
+    return !!sessionStorage.getItem('user')
   }
 }

@@ -1,5 +1,6 @@
 <div class="card bookCard">
-    <img [src]="SERVER_URL + '/uploads/' + book.bookImg" class="card-img-top bookImage" alt="Book Image">
+    <i *ngIf="dataFromMyBook" (click)="deleteBook(book._id)" class="fa-solid fa-trash position-absolute icon fa-beat z-1 text-danger fs-3"></i>
+    <img [src]="SERVER_URL + '/uploads/' + book.bookImg" class="card-img-top bookImage position-relative" alt="Book Image" >
     <div class="card-body d-flex align-items-center flex-column">
         <h5 class="card-title">{{book.bookName}}</h5>
         <p>{{book.bookCategory=="1"?"Fiction":book.bookCategory=="2"?"Non-Fiction":book.bookCategory=="3"?"Poetry":book.bookCategory=="4"?"Children's Books":book.bookCategory=="5"?"Educational & Academic":"Short Stories"}}</p>

@@ -10,10 +10,11 @@ import { saveAs } from 'file-saver';
 })
 export class BooksComponent {
 
-  @Input() book:any;
-  SERVER_URL:any="";
+  @Input() book: any;
+  @Input() dataFromMyBook: boolean = false
+  SERVER_URL: any = "";
 
-  constructor(private api: ApiService,private http: HttpClient) { 
+  constructor(private api: ApiService, private http: HttpClient) {
     this.SERVER_URL = api.server_url
   }
 
@@ -30,5 +31,12 @@ export class BooksComponent {
         console.error(error);
       }
     });
-}
+  }
+  
+  deleteBook(bookId:any){
+    this.api.deleteBookAPI(bookId).subscribe((result:any)=>{
+      this.api.getMyBook()
+    })
+  }
+
 }
