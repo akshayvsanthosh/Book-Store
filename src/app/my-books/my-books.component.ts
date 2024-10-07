@@ -19,9 +19,4 @@ export class MyBooksComponent implements OnInit{
     })
   }
 
-  // getMyBook(){
-  //   this.api.getMyBookAPI().subscribe((result:any)=>{
-  //     this.myBook=result
-  //   })
-  // }
 }
