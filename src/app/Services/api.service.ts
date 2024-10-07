@@ -9,7 +9,7 @@ export class ApiService {
   searchKey=new BehaviorSubject("")
   myBook=new BehaviorSubject(null)
 
-  server_url="https://book-store-server-2dkk.onrender.com"
+  server_url="https://book-store-server-rfcc.onrender.com"
 
   constructor(private http:HttpClient) { }
 
