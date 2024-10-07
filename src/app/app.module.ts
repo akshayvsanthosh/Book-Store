@@ -16,6 +16,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { SearchPipe } from './pipes/search.pipe';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ToastrModule } from 'ngx-toastr';
     PublishBookComponent,
     AboutComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,
@@ -37,7 +39,8 @@ import { ToastrModule } from 'ngx-toastr';
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

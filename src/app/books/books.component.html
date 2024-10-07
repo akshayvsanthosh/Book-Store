@@ -3,6 +3,6 @@
     <div class="card-body d-flex align-items-center flex-column">
         <h5 class="card-title">{{book.bookName}}</h5>
         <p>{{book.bookCategory=="1"?"Fiction":book.bookCategory=="2"?"Non-Fiction":book.bookCategory=="3"?"Poetry":book.bookCategory=="4"?"Children's Books":book.bookCategory=="5"?"Educational & Academic":"Short Stories"}}</p>
-        <a href="" class="btn btn-warning rounded-5 fw-semibold text-white w-50">VIEW MORE</a>
+        <a (click)="downloadBook(book.bookFile)" class="btn btn-warning rounded-5 fw-semibold text-white w-50">DOWNLOAD</a>
     </div>
 </div>

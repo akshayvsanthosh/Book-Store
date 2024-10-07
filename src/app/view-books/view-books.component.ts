@@ -8,17 +8,23 @@ import { ApiService } from '../Services/api.service';
 })
 export class ViewBooksComponent implements OnInit{
   allBooks:any=[]
+  parentData:boolean=true
+  searchKey:string=""
   
   constructor(private api:ApiService){}
 
   ngOnInit(): void {
     this.getAllBooks()
+
+    this.api.searchKey.subscribe((res:any)=>{
+      this.searchKey=res      
+    })
   }
 
   getAllBooks(){
     this.api.getAllBooksAPI().subscribe((result:any)=>{
       this.allBooks=result
-      // console.log(this.allBooks);
+      console.log(this.allBooks);
     })
   }
 

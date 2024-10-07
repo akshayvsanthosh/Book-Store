@@ -1,3 +1,4 @@
+<app-header [dataFromParent]="parentData"></app-header>
 <div class="booksContainer">
     <div class="blurBooksContainer">
         <div class="container text-center">
@@ -18,7 +19,7 @@
                 <!-- books -->
                 <div class="col-12">
                     <div class="row mt-5">
-                        <div *ngFor="let book of allBooks" class="col-12 col-md-6 col-lg-4 pt-3 pb-3 d-flex align-items-center justify-content-center">
+                        <div *ngFor="let book of allBooks | search:searchKey" class="col-12 col-md-6 col-lg-4 pt-3 pb-3 d-flex align-items-center justify-content-center">
                             <app-books [book]="book"></app-books>
                         </div>
                     </div>
@@ -27,3 +28,4 @@
         </div>
     </div>
 </div>
+<app-footer></app-footer>
